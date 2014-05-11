@@ -1,4 +1,18 @@
 WayfarerLive::Application.routes.draw do
+  devise_for :users
+  get "pages/index"
+  
+  
+  match '/journals', to: "pages#journals", via: :get
+  match '/polls', to: "pages#polls", via: :get
+  match '/about', to: "pages#textbooks", via: :get
+  match '/team', to: "pages#team", via: :get
+  match '/shop', to: "pages#shop", via: :get
+  match '/social_hub', to: "pages#social_hub", via: :get
+  
+  
+  
+  root to: "pages#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

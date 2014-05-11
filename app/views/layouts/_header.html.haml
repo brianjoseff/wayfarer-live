@@ -1,0 +1,51 @@
+.nav-area.navbar.navbar-default.navbar-fixed-top{role: "navigation"}
+  .container
+    .row
+      / Brand and toggle get grouped for better mobile display
+      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      .navbar-header
+        .col-lg-12
+          %h3 #{link_to "WAYFARING", root_path, :class => "header-title"}        
+
+
+      / Collect the nav links, forms, and other content for toggling
+      .navbar-collapse.collapse
+        %ul.nav.navbar-nav 
+          / %ul#nav_pill_section.nav.nav-pills.navbar-right.colored-pills 
+          %li{:class => "#{'active' if current_page?(root_path)} smoothScroll"}=link_to "Home", root_path
+          %li{:class => "#{'active' if current_page?(about_path)} dropdown"}
+            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+              About
+              %b.caret
+            %ul.dropdown-menu
+              %li
+                =link_to "The Event", about_path
+              %li
+                =link_to "Team", team_path
+          %li{:class => "#{'active' if current_page?(journals_path)}"}=link_to "Journals", journals_path
+          %li#nav-pill-pink{:class => "#{'active' if current_page?(polls_path)}"}=link_to "Polls", polls_path
+          %li#nav-pill-pink{:class => "#{'active' if current_page?(social_hub_path)}"}=link_to "Social Hub", social_hub_path
+          %li#nav-pill-pink{:class => "#{'active' if current_page?(shop_path)}"}=link_to "Shop", shop_path
+
+            
+        .nav.navbar-nav.navbar-right
+          .user-nav
+            Cool Kids:
+            -if user_signed_in?
+              -if current_user.name
+                =link_to current_user.name, user_path(current_user)
+              -else
+                =link_to "Your Page", user_path(current_user)
+              %span.points
+                =current_user.points
+              %i.icon.icon-user.nav-icon
+              =link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "#{'active' if current_page?(root_path)} nav-user-signout"    
+            -else
+              %i.icon.icon-user.nav-icon
+              = link_to "Sign Up", new_user_registration_path, :class => "nav-user-link"
+              or
+              =link_to "Sign In", new_user_session_path, :class => "#{'active' if current_page?(root_path)} nav-user-link" 
