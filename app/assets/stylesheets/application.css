@@ -11,3 +11,32 @@
  *= require_self
  *= require_tree .
  */
+
+body { 
+  background: url('wayfaring-lights.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+	
+	
+}
+
+.bold{
+	text-weight: bold;
+}
+
+.opaque-body{
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #fff;
+	filter: alpha(opacity=80);
+	opacity: 0.8;*/
+	/*Fallback for web browsers that doesn't support RGBa */
+	background: rgb(0, 0, 0);
+	/* RGBa with 0.6 opacity */
+	
+	/*box-shadow: 0 0 100px 100px #fff;*/
+}

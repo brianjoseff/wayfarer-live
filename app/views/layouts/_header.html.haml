@@ -9,7 +9,7 @@
         %span.icon-bar
       .navbar-header
         .col-lg-12
-          %h3 #{link_to "WAYFARING", root_path, :class => "header-title"}        
+          %h4.title #{link_to "WF", root_path, :class => "title"}        
 
 
       / Collect the nav links, forms, and other content for toggling
@@ -37,13 +37,13 @@
             Cool Kids:
             -if user_signed_in?
               -if current_user.name
-                =link_to current_user.name, user_path(current_user)
+                =link_to current_user.name, user_path(current_user), :class => "nav-user-link"
               -else
-                =link_to "Your Page", user_path(current_user)
+                =link_to "Your Page", user_path(current_user), :class => "nav-user-link"
               %span.points
                 =current_user.points
               %i.icon.icon-user.nav-icon
-              =link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "#{'active' if current_page?(root_path)} nav-user-signout"    
+              =link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "#{'active' if current_page?(root_path)} nav-user-signout nav-user-link"    
             -else
               %i.icon.icon-user.nav-icon
               = link_to "Sign Up", new_user_registration_path, :class => "nav-user-link"

@@ -11,4 +11,5 @@
       %p.alert  #{alert}
       =render "layouts/header"
     .container
-      = yield
+      .opaque-body
+        = yield
