@@ -1,0 +1,9 @@
+.journal-entry
+  %p.journal-date #{journal_entry.created_at}
+  %p #{journal_entry.content}
+
+  = render_shareable :buttons=> ['twitter', 'facebook', 'google_plus','reddit'] 
+
+  -if current_user && current_user.admin?
+    = link_to 'Edit', edit_journal_entry_path(journal_entry)
+  

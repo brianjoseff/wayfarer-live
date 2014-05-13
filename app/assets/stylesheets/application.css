@@ -13,14 +13,22 @@
  */
 
 body { 
-  background: url('wayfaring-lights.jpg') no-repeat center center fixed; 
+  background: url('ringleader.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
 
+input[type="text"]{
+   height: 45px;
+   font-size: 150%;
+   line-height: 45px;
+}
 	
-	
+input[type="password"]{
+	height: 45px;
+	font-size: 150%;
 }
 
 .bold{
@@ -28,10 +36,11 @@ body {
 }
 
 .opaque-body{
+
 	padding: 10px;
 	padding-left: 20px;
 	padding-right: 20px;
-	background-color: #fff;
+	background-color: #000 !important;
 	filter: alpha(opacity=80);
 	opacity: 0.8;
 	/*Fallback for web browsers that doesn't support RGBa */
@@ -39,4 +48,17 @@ body {
 	/* RGBa with 0.6 opacity */
 	
 	/*box-shadow: 0 0 100px 100px #fff;*/
+}
+
+
+.opaque-body p, h1, h2, h3, h4, h5, h6, label {
+		color: #fff !important;
+}
+.opaque-body a{
+	color: #c20002;
+	text-decoration: underline;
+}
+.opaque-body a:hover{
+	color: #fff18b;
+	text-decoration: underline;
 }

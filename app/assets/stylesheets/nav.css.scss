@@ -15,8 +15,12 @@ a.title{
 }
 a.title:hover{
 	text-decoration: none !important;
+	background-color: transparent !important;
+	color: #c20002 !important;
 }
-
+a.title:visited{
+	color: #fff18b;
+}
 .user-nav {
 	margin-top: 13px;
 	color: #fff;
@@ -35,8 +39,8 @@ a.nav-user-link:hover{
 .navbar-nav > li > a:hover{
 		
 		/*background-color: #ff91af;*/
-		background-color: #7f8c8d !important;
-		color: #fff !important;
+		background-color: #fff18b !important;
+		color: #c20002 !important;
 /*	background-color: #ffc0b9;*/
 }
 .navbar-nav > li > a{

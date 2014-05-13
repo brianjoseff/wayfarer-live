@@ -36,7 +36,7 @@ end
 
 
 gem 'devise'
-
+gem 'shareable'
 
 gem 'pg'
 gem 'heroku'

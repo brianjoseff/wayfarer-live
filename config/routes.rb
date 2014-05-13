@@ -1,9 +1,12 @@
 WayfarerLive::Application.routes.draw do
+  resources :journal_entries
+
   devise_for :users
   get "pages/index"
   
+  get '/users/:id', :to => 'users#show', :as => :user
   
-  match '/journals', to: "pages#journals", via: :get
+  match '/journals', to: "journal_entries#index", via: :get
   match '/polls', to: "pages#polls", via: :get
   match '/about', to: "pages#about", via: :get
   match '/team', to: "pages#team", via: :get

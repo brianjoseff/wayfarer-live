@@ -1,0 +1,17 @@
+.row
+  .col-lg-4
+    %h2 Sign up
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form"}) do |f|
+      = devise_error_messages!
+      .form-group
+        = f.label :email, class: "control-label"
+        %br/
+        = f.email_field :email, autofocus: true, type: "text", class: "form-control", placeholder: "gorilla@wayfaringlive.com"
+      .form-group
+        = f.label :password, class: "control-label"
+        = f.password_field :password, autocomplete: "off", type: "password", class: "form-control", placeholder: "password"
+      / .form-group
+      /   = f.label :password_confirmation, class: "control-label"
+      /   = f.password_field :password_confirmation, autocomplete: "off", type: "password", class: "form-control", placeholder: "password"
+      = f.submit "Sign up", class: "btn btn-primary"
+    = render "devise/shared/links"

@@ -26,6 +26,7 @@
                 =link_to "The Event", about_path
               %li
                 =link_to "Team", team_path
+          / %li{:class => "#{'active' if current_page?(journals_path)}"}=link_to "Journals", "http://blog.wayfaringlive.com"
           %li{:class => "#{'active' if current_page?(journals_path)}"}=link_to "Journals", journals_path
           %li#nav-pill-pink{:class => "#{'active' if current_page?(polls_path)}"}=link_to "Polls", polls_path
           %li#nav-pill-pink{:class => "#{'active' if current_page?(social_hub_path)}"}=link_to "Social Hub", social_hub_path
@@ -34,17 +35,18 @@
             
         .nav.navbar-nav.navbar-right
           .user-nav
-            Cool Kids:
+            
             -if user_signed_in?
-              -if current_user.name
-                =link_to current_user.name, user_path(current_user), :class => "nav-user-link"
+              Cool Kid:
+              -if current_user.email
+                =link_to current_user.email, user_path(current_user), :class => "nav-user-link"
               -else
                 =link_to "Your Page", user_path(current_user), :class => "nav-user-link"
-              %span.points
-                =current_user.points
               %i.icon.icon-user.nav-icon
+              |
               =link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "#{'active' if current_page?(root_path)} nav-user-signout nav-user-link"    
             -else
+              Cool Kids:
               %i.icon.icon-user.nav-icon
               = link_to "Sign Up", new_user_registration_path, :class => "nav-user-link"
               or

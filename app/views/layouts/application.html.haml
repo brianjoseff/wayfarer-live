@@ -1,10 +1,11 @@
 !!!
 %html
   %head
-    %title WayfarerLive
+    %title Wayfaring
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
   %body
     .container
       %p.notice #{notice}
