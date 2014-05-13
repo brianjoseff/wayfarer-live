@@ -7,8 +7,8 @@
     = csrf_meta_tags
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
   %body
-    .container
-      -unless current_page(header_iframe_path)?
+    -unless current_page?(header_iframe_path)
+      .container
         %p.notice #{notice}
         %p.alert  #{alert}
         =render "layouts/header"

@@ -1,54 +1,55 @@
-.nav-area.navbar.navbar-default.navbar-fixed-top{role: "navigation"}
-  .container
-    .row
-      / Brand and toggle get grouped for better mobile display
-      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
-        %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      .navbar-header
-        .col-lg-12social_hub_path
-          %h4.title #{link_to "WF", "http://www.wayfaringlive.com/", :class => "title"}        
+.container
+  .nav-area.navbar.navbar-default.navbar-fixed-top{role: "navigation"}
+    .container
+      .row
+        / Brand and toggle get grouped for better mobile display
+        %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        .navbar-header
+          .col-lg-12social_hub_path
+            %h4.title #{link_to "WF", "http://www.wayfaringlive.com/", :class => "title"}        
 
 
-      / Collect the nav links, forms, and other content for toggling
-      .navbar-collapse.collapse
-        %ul.nav.navbar-nav 
-          / %ul#nav_pill_section.nav.nav-pills.navbar-right.colored-pills 
-          %li{:class => "#{'active' if current_page?("http://www.wayfaringlive.com/")} smoothScroll"}=link_to "Home", "http://www.wayfaringlive.com/"
-          %li{:class => "#{'active' if current_page?("http://www.wayfaringlive.com/about")} dropdown"}
-            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-              About
-              %b.caret
-            %ul.dropdown-menu
-              %li
-                =link_to "The Event", "http://www.wayfaringlive.com/about"
-              %li
-                =link_to "Team", "http://www.wayfaringlive.com/team"
-          / %li{:class => "#{'active' if current_page?("http://www.wayfaringlive.com/polls")}"}=link_to "Journals", "http://blog.wayfaringlive.com"
-          %li{:class => "#{'active' if current_page?("http://www.wayfaringlive.com/journals")}"}=link_to "Journals", "http://www.wayfaringlive.com/journals"
-          %li#nav-pill-pink{:class => "#{'active' if current_page?("http://www.wayfaringlive.com/polls)"}"}=link_to "Polls", "http://www.wayfaringlive.com/polls"
-          %li#nav-pill-pink{:class => "#{'active' if current_page?("http://www.wayfaringlive.com/social_hub")}"}=link_to "Social Hub", "http://www.wayfaringlive.com/social_hub"
-          %li#nav-pill-pink{:class => "#{'active' if current_page?(root_path)}"}=link_to "Shop", root_path
+        / Collect the nav links, forms, and other content for toggling
+        .navbar-collapse.collapse
+          %ul.nav.navbar-nav 
+            / %ul#nav_pill_section.nav.nav-pills.navbar-right.colored-pills 
+            %li{:class => "#{'active' if current_page?("http://www.wayfaringlive.com/")} smoothScroll"}=link_to "Home", "http://www.wayfaringlive.com/"
+            %li{:class => "#{'active' if current_page?("http://www.wayfaringlive.com/about")} dropdown"}
+              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                About
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  =link_to "The Event", "http://www.wayfaringlive.com/about"
+                %li
+                  =link_to "Team", "http://www.wayfaringlive.com/team"
+            / %li{:class => "#{'active' if current_page?("http://www.wayfaringlive.com/polls")}"}=link_to "Journals", "http://blog.wayfaringlive.com"
+            %li{:class => "#{'active' if current_page?("http://www.wayfaringlive.com/journals")}"}=link_to "Journals", "http://www.wayfaringlive.com/journals"
+            %li#nav-pill-pink{:class => "#{'active' if current_page?("http://www.wayfaringlive.com/polls)"}"}=link_to "Polls", "http://www.wayfaringlive.com/polls"
+            %li#nav-pill-pink{:class => "#{'active' if current_page?("http://www.wayfaringlive.com/social_hub")}"}=link_to "Social Hub", "http://www.wayfaringlive.com/social_hub"
+            %li#nav-pill-pink{:class => "#{'active' if current_page?(root_path)}"}=link_to "Shop", root_path
 
             
-        / .nav.navbar-nav.navbar-right
-        /          .user-nav
-        /            
-        /            -if user_signed_in?
-        /              Cool Kid:
-        /              -if current_user.email
-        /                =link_to current_user.email, user_path(current_user), :class => "nav-user-link"
-        /              -else
-        /                =link_to "Your Page", user_path(current_user), :class => "nav-user-link"
-        /              %i.icon.icon-user.nav-icon
-        /              |
-        /              =link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "#{'active' if current_page?(http://www.wayfaringlive.com/)} nav-user-signout nav-user-link"    
-        /            -else
-        /              Cool Kids:
-        /              %i.icon.icon-user.nav-icon
-        /              = link_to "Sign Up", new_user_registration_path, :class => "nav-user-link"
-        /              or
-        /              =link_to "Sign In", new_user_session_path, :class => "#{'active' if current_page?(http://www.wayfaringlive.com/)} nav-user-link" 
+          / .nav.navbar-nav.navbar-right
+          /          .user-nav
+          /            
+          /            -if user_signed_in?
+          /              Cool Kid:
+          /              -if current_user.email
+          /                =link_to current_user.email, user_path(current_user), :class => "nav-user-link"
+          /              -else
+          /                =link_to "Your Page", user_path(current_user), :class => "nav-user-link"
+          /              %i.icon.icon-user.nav-icon
+          /              |
+          /              =link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "#{'active' if current_page?(http://www.wayfaringlive.com/)} nav-user-signout nav-user-link"    
+          /            -else
+          /              Cool Kids:
+          /              %i.icon.icon-user.nav-icon
+          /              = link_to "Sign Up", new_user_registration_path, :class => "nav-user-link"
+          /              or
+          /              =link_to "Sign In", new_user_session_path, :class => "#{'active' if current_page?(http://www.wayfaringlive.com/)} nav-user-link" 
        
