@@ -12,7 +12,7 @@
  *= require_tree .
  */
 
-body { 
+body.normal { 
   background: url('ringleader.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;

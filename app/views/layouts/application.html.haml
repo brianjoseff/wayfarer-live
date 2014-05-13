@@ -6,8 +6,10 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
-  %body
-    -unless current_page?(header_iframe_path)
+  %body{class: "#{normal if current_page?(root_path)}"}
+    -if current_page?(header_iframe_path)
+      =render 'pages/header_iframe'
+    -else
       .container
         %p.notice #{notice}
         %p.alert  #{alert}

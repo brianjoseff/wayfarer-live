@@ -17,8 +17,8 @@
         .navbar-collapse.collapse
           %ul.nav.navbar-nav 
             / %ul#nav_pill_section.nav.nav-pills.navbar-right.colored-pills 
-            %li{:class => "#{'active' if current_page?("http://www.wayfaringlive.com/")} smoothScroll"}=link_to "Home", "http://www.wayfaringlive.com/"
-            %li{:class => "#{'active' if current_page?("http://www.wayfaringlive.com/about")} dropdown"}
+            %li{:class => "#{'active' if current_page?('http://www.wayfaringlive.com')} smoothScroll"}=link_to "Home", "http://www.wayfaringlive.com/"
+            %li{:class => "#{'active' if current_page?('http://www.wayfaringlive.com/about')} dropdown"}
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
                 About
                 %b.caret
@@ -28,10 +28,10 @@
                 %li
                   =link_to "Team", "http://www.wayfaringlive.com/team"
             / %li{:class => "#{'active' if current_page?("http://www.wayfaringlive.com/polls")}"}=link_to "Journals", "http://blog.wayfaringlive.com"
-            %li{:class => "#{'active' if current_page?("http://www.wayfaringlive.com/journals")}"}=link_to "Journals", "http://www.wayfaringlive.com/journals"
-            %li#nav-pill-pink{:class => "#{'active' if current_page?("http://www.wayfaringlive.com/polls)"}"}=link_to "Polls", "http://www.wayfaringlive.com/polls"
-            %li#nav-pill-pink{:class => "#{'active' if current_page?("http://www.wayfaringlive.com/social_hub")}"}=link_to "Social Hub", "http://www.wayfaringlive.com/social_hub"
-            %li#nav-pill-pink{:class => "#{'active' if current_page?(root_path)}"}=link_to "Shop", root_path
+            %li{:class => "#{'active' if current_page?('http://www.wayfaringlive.com/journals')}"}=link_to "Journals", "http://www.wayfaringlive.com/journals"
+            %li{:class => "#{'active' if current_page?('http://www.wayfaringlive.com/polls')}"}=link_to "Polls", "http://www.wayfaringlive.com/polls"
+            %li{:class => "#{'active' if current_page?('http://www.wayfaringlive.com/social_hub')}"}=link_to "Social Hub", "http://www.wayfaringlive.com/social_hub"
+            %li{:class => "#{'active' if current_page?(root_path)}"}=link_to "Shop", root_path
 
             
           / .nav.navbar-nav.navbar-right
