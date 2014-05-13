@@ -8,9 +8,10 @@
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
   %body
     .container
-      %p.notice #{notice}
-      %p.alert  #{alert}
-      =render "layouts/header"
-    .container
-      .opaque-body
-        = yield
+      -unless current_page(header_iframe_path)?
+        %p.notice #{notice}
+        %p.alert  #{alert}
+        =render "layouts/header"
+      .container
+        .opaque-body
+          = yield

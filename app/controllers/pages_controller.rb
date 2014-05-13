@@ -20,4 +20,7 @@ class PagesController < ApplicationController
   def social_hub
   end
   
+  def header_iframe
+  end
+  
 end

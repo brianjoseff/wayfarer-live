@@ -12,6 +12,7 @@ WayfarerLive::Application.routes.draw do
   match '/team', to: "pages#team", via: :get
   match '/shop', to: "pages#shop", via: :get
   match '/social_hub', to: "pages#social_hub", via: :get
+  match '/header_iframe', to: "pages#header_iframe", via: :get
   
   
   
