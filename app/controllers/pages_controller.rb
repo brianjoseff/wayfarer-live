@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_filter :allow_iframe_requests, only: [:header_iframe]
+  
   def index
   end
   
@@ -23,4 +25,10 @@ class PagesController < ApplicationController
   def header_iframe
   end
   
+  
+  
+  
+  def allow_iframe_requests
+    response.headers.delete('X-Frame-Options')
+  end
 end
