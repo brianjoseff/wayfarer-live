@@ -30,7 +30,7 @@
           %li{:class => "#{'active' if current_page?(journals_path)}"}=link_to "Journals", journals_path
           %li#nav-pill-pink{:class => "#{'active' if current_page?(polls_path)}"}=link_to "Polls", polls_path
           %li#nav-pill-pink{:class => "#{'active' if current_page?(social_hub_path)}"}=link_to "Social Hub", social_hub_path
-          %li#nav-pill-pink{:class => "#{'active' if current_page?(shop_path)}"}=link_to "Shop", shop_path
+          %li#nav-pill-pink{:class => "#{'active' if current_page?("http://shop.wayfaringlive.com")}"}=link_to "Shop", "http://shop.wayfaringlive.com"
 
             
         .nav.navbar-nav.navbar-right
