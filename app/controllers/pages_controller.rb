@@ -25,6 +25,11 @@ class PagesController < ApplicationController
   def header_iframe
   end
   
+  def sponsors
+  end
+  
+  def contacts
+  end
   
   
   
