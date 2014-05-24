@@ -1,7 +1,9 @@
 WayfarerLive::Application.routes.draw do
+  resources :memberships
+
   resources :journal_entries
 
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'users/registrations' }
   get "pages/index"
   
   get '/users/:id', :to => 'users#show', :as => :user
@@ -15,7 +17,6 @@ WayfarerLive::Application.routes.draw do
   match '/header_iframe', to: "pages#header_iframe", via: :get
   match '/sponsors', to: "pages#sponsors", via: :get
   match '/contacts', to: "pages#contacts", via: :get
-  
   
   root to: "pages#index"
   # The priority is based upon order of creation: first created -> highest priority.

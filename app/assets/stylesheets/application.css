@@ -35,6 +35,13 @@ input[type="password"]{
 	text-weight: bold;
 }
 
+.error{
+	color: #ec182d !important;
+}
+.success{
+	color: green !important;
+}
+
 .opaque-body{
 
 	padding: 10px;

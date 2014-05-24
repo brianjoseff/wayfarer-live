@@ -13,7 +13,10 @@
       .container
         %p.notice #{notice}
         %p.alert  #{alert}
+        -if flash[:success]
+          %h1.success #{flash[:success]}
         =render "layouts/header"
       .container
         .opaque-body
           = yield
+          = debug(params) if Rails.env.development?

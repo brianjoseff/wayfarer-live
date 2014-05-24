@@ -11,12 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140513172340) do
+ActiveRecord::Schema.define(version: 20140524171133) do
 
   create_table "journal_entries", force: true do |t|
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "memberships", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "tier_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tiers", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "code"
   end
 
   create_table "users", force: true do |t|
@@ -33,6 +49,7 @@ ActiveRecord::Schema.define(version: 20140513172340) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin"
+    t.integer  "tier_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
