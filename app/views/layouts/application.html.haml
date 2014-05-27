@@ -5,7 +5,9 @@
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
+    %meta{:name=>"description", :content=> "We are but a bus full of wayfarers, throwing all care to the wind as we submit our fate to you, the audience. Follow us as we romp around the United States on a pick-your-own adventure reality tv show series, produced in conjunction with the Discovery Channel."}
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
+    
   %body{class: "#{'normal' if !current_page?(header_iframe_path)}"}
     -if current_page?(header_iframe_path)
       =render 'pages/header_iframe'
