@@ -45,12 +45,12 @@
             
             -if user_signed_in?
               Rumpus Member:
-              -if current_user.email
-                =link_to current_user.email, user_path(current_user), :class => "nav-user-link"
-              -else
-                =link_to "Your Page", user_path(current_user), :class => "nav-user-link"
-              %i.icon.icon-user.nav-icon
-              |
+              / -if current_user.email
+              /        =link_to current_user.email, user_path(current_user), :class => "nav-user-link"
+              /      -else
+              /        =link_to "Your Page", user_path(current_user), :class => "nav-user-link"
+              /      %i.icon.icon-user.nav-icon
+              /      |
               =link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "#{'active' if current_page?(root_path)} nav-user-signout nav-user-link"    
             -else
               Join the Rumpus:

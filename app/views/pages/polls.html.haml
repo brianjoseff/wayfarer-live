@@ -1,3 +1,45 @@
+/ %form{:action => "http://poll.pollcode.com/76443368", :method => "post"}
+/   %table{:bgcolor => "EEEEEE", :border => "0", :cellpadding => "0", :cellspacing => "2", :width => "175"}
+/     %tr
+/       %td{:colspan => "2", :height => "10"}
+/         %font{:color => "000000", :face => "Verdana", :size => "2"}
+/           %b What are we going to eat for breakfast
+/     %tr
+/       %td{:width => "5"}
+/         %input#76443368answer1{:name => "answer", :type => "radio", :value => "1"}/
+/       %td
+/         \&nbsp;
+/         %font{:color => "000000", :face => "Verdana", :size => "2"}
+/           %label{:for => "76443368answer1"} scorpion
+/     %tr
+/       %td{:width => "5"}
+/         %input#76443368answer2{:name => "answer", :type => "radio", :value => "2"}/
+/       %td
+/         \&nbsp;
+/         %font{:color => "000000", :face => "Verdana", :size => "2"}
+/           %label{:for => "76443368answer2"} chorizo
+/     %tr
+/       %td{:width => "5"}
+/         %input#76443368answer3{:name => "answer", :type => "radio", :value => "3"}/
+/       %td
+/         \&nbsp;
+/         %font{:color => "000000", :face => "Verdana", :size => "2"}
+/           %label{:for => "76443368answer3"} brains
+/     %tr
+/       %td{:colspan => "2", :height => "10"}
+/         %center
+/           %input{:type => "submit", :value => " Vote "}
+/             \&nbsp;&nbsp;
+/             %input{:name => "view", :type => "submit", :value => " View "}/
+/     %tr
+/       %td{:align => "right", :colspan => "2"}
+/         %font{:color => "000000", :face => "Verdana", :height => "5", :size => "1"}
+/           pollcode.com
+/           = succeed "&amp;nbsp;" do
+/             %a{:href => "http://pollcode.com/"}
+/               %font{:color => "000000", :face => "Verdana", :size => "1"} free polls
+
+
 
 / - Zoomph Polling Widget -
 %iframe{frameborder: "0", scrolling: "no", src: "https://admin.zoomph.com/Display/Widget/v2/Polling.aspx?feedId=9282", style: "height:391px; width:339px; border:none;"}

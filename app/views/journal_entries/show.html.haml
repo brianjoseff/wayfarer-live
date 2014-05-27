@@ -1,5 +1,6 @@
 %p#notice= notice
 
+%h3 #{@journal_entry.title}
 %p.journal-date #{@journal_entry.created_at}
 %p #{simple_format h(@journal_entry.content)}
 

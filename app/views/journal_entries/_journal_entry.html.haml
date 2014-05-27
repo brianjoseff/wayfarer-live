@@ -1,7 +1,8 @@
 .journal-entry
-  %p.journal-date #{journal_entry.created_at}
-  %p #{journal_entry.content}
-
+  %h3 #{journal_entry.title}
+  %p.journal-date #{journal_entry.created_at.strftime("%B %d, %Y")}
+  / %p #{ truncate_with_link(journal_entry.content, 40, journal_entry_path(journal_entry)) }
+  %p #{ truncate(journal_entry.content, 40) } #{link_to "Read More", journal_entry_path(journal_entry)}
   = render_shareable :buttons=> ['twitter', 'facebook', 'google_plus','reddit'] 
 
   -if current_user && current_user.admin?
