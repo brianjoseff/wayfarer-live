@@ -8,13 +8,11 @@
     %meta{:name=>"description", :content=> "We are but a bus full of wayfarers, throwing all care to the wind as we submit our fate to you, the audience. Follow us as we romp around the United States on a pick-your-own adventure reality tv show series, produced in conjunction with the Discovery Channel."}
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
     
-    / -- ZOOMPH JS/CSS (Needed once per page)
+    / Zoomph Head Code
     %script{:src => "//display.zoomph.com/Scripts/jquery-1.7.1.min.js", :type => "text/javascript"}
-    %script{:src => "//display.zoomph.com/Bundles/widgetLoader", :type => "text/javascript"}
-    %link{:href => "//display.zoomph.com/Bundles/widgetCss", :rel => "stylesheet", :type => "text/css"}/
-    %link{:href => "//admin.zoomph.com/Display/Widget/v5/Styles/Reset.css", :rel => "stylesheet"}/
-    %link{:href => "//zoomphcontent.azurewebsites.net/clients/wayfaring/style.css", :rel => "stylesheet"}/
-    / -- END ZOOMPH JS/CSS (Needed once per page)
+    %script{:src => "//display.zoomph.com/Bundles/socialHubLoader", :type => "text/javascript"}
+    %link{:href => "//zoomphcontent.azurewebsites.net/clients/wayfaring/Style-socialhub.css", :rel => "stylesheet"}/
+    / END Zoomph Head Code
     
   %body{class: "#{'normal' if !current_page?(header_iframe_path)}"}
     -if current_page?(header_iframe_path)
