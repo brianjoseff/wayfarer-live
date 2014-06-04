@@ -9,7 +9,7 @@ WayfarerLive::Application.routes.draw do
   get '/users/:id', :to => 'users#show', :as => :user
   
   match '/journals', to: "journal_entries#index", via: :get
-  match '/polls', to: "pages#polls", via: :get
+  match '/episodes', to: "pages#episodes", via: :get
   match '/about', to: "pages#about", via: :get
   match '/team', to: "pages#team", via: :get
   match '/shop', to: "pages#shop", via: :get

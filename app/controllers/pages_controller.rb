@@ -5,6 +5,9 @@ class PagesController < ApplicationController
   def index
   end
   
+  def episodes
+  end
+  
   def journals
   end
   
