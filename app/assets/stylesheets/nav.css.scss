@@ -31,8 +31,10 @@ a.title:visited{
 .header-logo{
 	width: 100px;
 	height: 50px;
-  background-position-y:50%;
-	background-position-x: 0%;
+	/* Doesn't work in Mozilla */
+/*  background-position-y:50%;
+	background-position-x: 0%;*/
+	background-position: 0 50%;
 	background-size: 100%;
 	background-image:url("wayfaring-initials.png");
 }

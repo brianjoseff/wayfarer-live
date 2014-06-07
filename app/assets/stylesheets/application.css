@@ -13,7 +13,7 @@
  */
 
 body.normal { 
-  background: url('ringleader.jpg') no-repeat center center fixed; 
+  background: url('wayfaring-background.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -43,18 +43,23 @@ input[type="password"]{
 }
 
 .opaque-body{
-
+	background: rgb(0, 0, 0); /* Fall-back for browsers that don't
+                                  support rgba */
+  background: rgba(0, 0, 0, .8);
+	
+	
+	
 	padding: 10px;
 	padding-left: 20px;
 	padding-right: 20px;
-	background-color: #000 !important;
+/*	background-color: #000 !important;
 	filter: alpha(opacity=80);
 	opacity: 0.8;
 	/*Fallback for web browsers that doesn't support RGBa */
-	background: rgb(0, 0, 0);
+	/*background: rgb(0, 0, 0);*/
 	/* RGBa with 0.6 opacity */
 	
-	/*box-shadow: 0 0 100px 100px #fff;*/
+	/*box-shadow: 0 0 100px 100px #fff;*/*/
 }
 
 
