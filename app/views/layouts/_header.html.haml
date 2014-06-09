@@ -42,7 +42,7 @@
           / %li#nav-pill-pink{:class => "#{'active' if current_page?("http://shop.wayfaringlive.com")}"}=link_to "Shop", "http://shop.wayfaringlive.com"
           
           -if user_signed_in?
-            =link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "#{'active' if current_page?(root_path)} nav-user-signout nav-user-link" 
+            =link_to "Sign out", destroy_user_session_path, :method => :delete
           -else  
             %li{:class => "#{'active' if current_page?(about_path)} dropdown"}
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}        
