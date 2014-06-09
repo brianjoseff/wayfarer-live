@@ -43,8 +43,8 @@ input[type="password"]{
 }
 
 .opaque-body{
-	background: rgb(0, 0, 0); /* Fall-back for browsers that don't
-                                  support rgba */
+	background: rgb(0, 0, 0);
+	/* Fall-back for browsers that don't support rgba */
   background: rgba(0, 0, 0, .8);
 	
 	
@@ -59,7 +59,7 @@ input[type="password"]{
 	/*background: rgb(0, 0, 0);*/
 	/* RGBa with 0.6 opacity */
 	
-	/*box-shadow: 0 0 100px 100px #fff;*/*/
+	/*box-shadow: 0 0 100px 100px #fff;*/
 }
 
 
