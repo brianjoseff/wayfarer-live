@@ -32,7 +32,7 @@ class PagesController < ApplicationController
   def sponsors
   end
   
-  def contacts
+  def contact_us
   end
   
   def exclusive_content

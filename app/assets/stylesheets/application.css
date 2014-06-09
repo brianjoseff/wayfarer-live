@@ -34,7 +34,9 @@ input[type="password"]{
 .bold{
 	text-weight: bold;
 }
-
+.italics{
+	font-style: italic !important;
+}
 .error{
 	color: #ec182d !important;
 }
@@ -77,5 +79,5 @@ input[type="password"]{
 
 
 .twitter{
-	margin-top:45px;
+	/*margin-top:45px;*/
 }
