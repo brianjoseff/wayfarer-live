@@ -19,6 +19,7 @@ WayfarerLive::Application.routes.draw do
   match '/contact_us', to: "pages#contact_us", via: :get
   match '/exclusive_content', to: "pages#exclusive_content", via: :get
   match '/event', to: "pages#event", via: :get
+  match '/polls', to: "pages#polls", via: :get
   root to: "pages#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

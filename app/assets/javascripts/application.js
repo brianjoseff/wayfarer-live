@@ -14,4 +14,13 @@
 //= require jquery_ujs
 //= require_tree .
 
-// took out turbolinks
+// 
+// if (typeof jQuery != 'undefined') {
+//  
+//     alert("jQuery library is loaded!");
+//  
+// }else{
+//  
+//     alert("jQuery library is not found!");
+//  
+// }

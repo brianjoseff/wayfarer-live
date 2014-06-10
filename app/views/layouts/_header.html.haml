@@ -2,7 +2,7 @@
   .container
     .row
       / Brand and toggle get grouped for better mobile display
-      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+      %button.navbar-toggle{"data-target" => "#wayfaring_nav", "data-toggle" => "collapse", type: "button"}
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
@@ -12,11 +12,8 @@
           /%h4.title #{link_to "WF", root_path, :class => "title"}
           .header-logo
             =link_to "", root_path
-          /=link_to "", root_path, class: "header-logo"        
-
-
       / Collect the nav links, forms, and other content for toggling
-      .navbar-collapse.collapse
+      .collapse.navbar-collapse#wayfaring_nav
         %ul.nav.navbar-nav 
           / %ul#nav_pill_section.nav.nav-pills.navbar-right.colored-pills 
           /%li{:class => "#{'active' if current_page?(root_path)} smoothScroll"}=link_to "Home", root_path
@@ -30,8 +27,8 @@
                 =link_to "The Event", about_path
               %li
                 =link_to "Team", team_path
-              %li
-                =link_to "Sponsors", sponsors_path
+              / %li
+              /      =link_to "Sponsors", sponsors_path
               %li
                 =link_to "Contact Us", contact_us_path
           %li{:class => "#{'active' if current_page?(journals_path)}"}=link_to "Journals", journals_path
@@ -61,16 +58,3 @@
           %li#nav-pill-pink{:class => "#{'active' if current_page?(get_access_path)}"}=link_to "Get Access", "#"
           
 
-        /     
-        / .nav.navbar-nav.navbar-right
-        /   .user-nav
-        /     
-        /     -if user_signed_in?
-        /       Rumpus Member:
-        /       =link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "#{'active' if current_page?(root_path)} nav-user-signout nav-user-link"    
-        /     -else
-        /       Join the Rumpus:
-        /       %i.icon.icon-user.nav-icon
-        /       = link_to "Sign Up", new_user_registration_path, :class => "nav-user-link"
-        /       or
-        /       =link_to "Sign In", new_user_session_path, :class => "#{'active' if current_page?(root_path)} nav-user-link" 
