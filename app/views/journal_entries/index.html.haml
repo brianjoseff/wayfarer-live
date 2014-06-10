@@ -1,25 +1,28 @@
-%h1 Journals
-%h4 The crew’s stories from the road (beginning July 2nd)
--if current_user && current_user.admin?
-  =link_to "Add Journal entry", new_journal_entry_path
-  %br/
-  %br/
-  / %table
-  /   %tr
-  /     %th Content
-  /     %th
-  /     %th
-  /     %th
-  / 
-  /   - @journal_entries.each do |journal_entry|
-  /     %tr
-  /       %td= journal_entry.content
-  /       %td= link_to 'Show', journal_entry
-  /       %td= link_to 'Edit', edit_journal_entry_path(journal_entry)
-  /       %td= link_to 'Destroy', journal_entry, :method => :delete, :data => { :confirm => 'Are you sure?' }
+.row
+  .col-lg-3
+  .col-lg-6.opaque-body
+    %h1 Journals
+    %h4 The crew’s stories from the road (beginning July 2nd)
+    -if current_user && current_user.admin?
+      =link_to "Add Journal entry", new_journal_entry_path
+      %br/
+      %br/
+      / %table
+      /   %tr
+      /     %th Content
+      /     %th
+      /     %th
+      /     %th
+      / 
+      /   - @journal_entries.each do |journal_entry|
+      /     %tr
+      /       %td= journal_entry.content
+      /       %td= link_to 'Show', journal_entry
+      /       %td= link_to 'Edit', edit_journal_entry_path(journal_entry)
+      /       %td= link_to 'Destroy', journal_entry, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 
-=render @journal_entries
+    =render @journal_entries
 
 
 

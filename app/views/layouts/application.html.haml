@@ -35,7 +35,7 @@
         %h1.success #{flash[:success]}
       =render "layouts/header"
     .container
-      .opaque-body
+      .opaque-bodyx
         = yield
         = debug(params) if Rails.env.development?
   %footer
