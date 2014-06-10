@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_filter :allow_iframe_requests, only: [:header_iframe]
-  before_filter :redirect_to_signup, :only => [:exclusive_content]
+  # before_filter :redirect_to_signup, :only => [:exclusive_content]
   
   def index
   end
