@@ -20,7 +20,10 @@ class PagesController < ApplicationController
   def team
   end
   
-  def shop
+  def event
+  end
+  
+  def get_access_path
   end
   
   def social_hub

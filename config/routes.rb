@@ -12,13 +12,13 @@ WayfarerLive::Application.routes.draw do
   match '/episodes', to: "pages#episodes", via: :get
   match '/about', to: "pages#about", via: :get
   match '/team', to: "pages#team", via: :get
-  match '/shop', to: "pages#shop", via: :get
+  match '/get_access', to: "pages#get_access", via: :get
   match '/social_hub', to: "pages#social_hub", via: :get
   match '/header_iframe', to: "pages#header_iframe", via: :get
   match '/sponsors', to: "pages#sponsors", via: :get
   match '/contact_us', to: "pages#contact_us", via: :get
   match '/exclusive_content', to: "pages#exclusive_content", via: :get
-  
+  match '/event', to: "pages#event", via: :get
   root to: "pages#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

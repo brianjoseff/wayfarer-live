@@ -20,7 +20,7 @@
         %ul.nav.navbar-nav 
           / %ul#nav_pill_section.nav.nav-pills.navbar-right.colored-pills 
           /%li{:class => "#{'active' if current_page?(root_path)} smoothScroll"}=link_to "Home", root_path
-          %li#nav-pill-pink{:class => "#{'active' if current_page?(episodes_path)}"}=link_to "Episodes", episodes_path
+          %li{:class => "#{'active' if current_page?(episodes_path)}"}=link_to "Episodes", episodes_path
           %li{:class => "#{'active' if current_page?(about_path)} dropdown"}
             %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
               About
@@ -36,13 +36,14 @@
                 =link_to "Contact Us", contact_us_path
           / %li{:class => "#{'active' if current_page?(journals_path)}"}=link_to "Journals", "http://blog.wayfaringlive.com"
           %li{:class => "#{'active' if current_page?(journals_path)}"}=link_to "Journals", journals_path
-          %li#nav-pill-pink{:class => "#{'active' if current_page?(social_hub_path)}"}=link_to "Social Hub", social_hub_path
-          %li#nav-pill-pink{:class => "#{'active' if current_page?(shop_path)}"}=link_to "Get Access", shop_path
-          %li#nav-pill-pink{:class => "#{'active' if current_page?(exclusive_content_path)}"}=link_to "Exclusive Content", exclusive_content_path
+          %li{:class => "#{'active' if current_page?(social_hub_path)}"}=link_to "Social Hub", social_hub_path
+          %li#nav-pill-pink{:class => "#{'active' if current_page?(get_access_path)}"}=link_to "Get Access", get_access_path
+          %li{:class => "#{'active' if current_page?(exclusive_content_path)}"}=link_to "Exclusive Content", exclusive_content_path
           / %li#nav-pill-pink{:class => "#{'active' if current_page?("http://shop.wayfaringlive.com")}"}=link_to "Shop", "http://shop.wayfaringlive.com"
           
           -if user_signed_in?
-            =link_to "Sign out", destroy_user_session_path, :method => :delete
+            %li
+              =link_to "Sign out", destroy_user_session_path, :method => :delete
           -else  
             %li{:class => "#{'active' if current_page?(about_path)} dropdown"}
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}        
