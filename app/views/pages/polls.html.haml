@@ -40,38 +40,26 @@
 /               %font{:color => "000000", :face => "Verdana", :size => "1"} free polls
 
 
+.row
+  .col-lg-1
+  .col-lg-10.opaque-body
+    %h1 Latest Poll
+    / - Zoomph Polling Widget -
+    /%iframe{:frameBorder => "0", :scrolling => "no", :src => "https://admin.zoomph.com/Display/Widget/v2/Polling.aspx?feedId=9858", :style => "height:391px; width:339px; border:none;"}
 
-%h1 Latest Poll
-/ - Zoomph Polling Widget -
-%iframe{:frameBorder => "0", :scrolling => "no", :src => "https://admin.zoomph.com/Display/Widget/v2/Polling.aspx?feedId=9858", :style => "height:391px; width:339px; border:none;"}
-
-/ - Zoomph Polling Widget -
-
-/ %iframe{frameborder: "0", scrolling: "no", src: "https://admin.zoomph.com/Display/Widget/v2/Polling.aspx?feedId=9282", style: "height:391px; width:339px; border:none;"}
-/ - Zoomph Polling Widget -
-.wf-widget-wrap
-  / Widget
-  .zoomphWidget{"data-widgetId" => "9858"}
-  / END Widget
-  / Footer Widget
-  .wf-footer
-    .wf-logo
-      %img{:src => "Images/wf-footer-logo.png"}/
-    .wf-zoomph-logo
-      %a{:href => "//zoomph.com/", :target => "_blank"}
-      %img{:src => "Images/wf-footer-zoomph-logo.png"}/
-  / End Footer WidgetN
+    / - Zoomph Polling Widget -
 
 
-.wf-widget-wrap
-  / Widget
-  .zoomphWidget{"data-widgetId" => "7aU579Y7tuM7vDbOi/i+myYmb3F9NhbzUkpYjDeyhNU9MgrJAKxzRA6yadlEaQXXklw3Ww=="}
-  / END Widget
-  / Footer Widget
-  .wf-footer
-    .wf-logo
-      %img{:src => "Images/wf-footer-logo.png"}/
-    .wf-zoomph-logo
-      %a{:href => "//zoomph.com/", :target => "_blank"}
-      %img{:src => "Images/wf-footer-zoomph-logo.png"}/
-  / End Footer Widget
+
+    .wf-widget-wrap
+      / Widget
+      .zoomphWidget{"data-widgetId" => "7aU579Y7tuM7vDbOi/i+myYmb3F9NhbzUkpYjDeyhNU9MgrJAKxzRA6yadlEaQXXklw3Ww=="}
+      / END Widget
+      / Footer Widget
+      .wf-footer
+        .wf-logo
+          %img{:src => "//zoomphcontent.azurewebsites.net/clients/wayfaring/images/wf-footer-logo.png"}/
+        .wf-zoomph-logo
+          %a{:href => "//zoomph.com/", :target => "_blank"}
+          %img{:src => "//zoomphcontent.azurewebsites.net/clients/wayfaring/images/wf-footer-zoomph-logo.png"}/
+      / End Footer Widget
