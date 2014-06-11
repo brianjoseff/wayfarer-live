@@ -33,7 +33,9 @@ input[type="text"]{
    font-size: 150%;
    line-height: 45px;
 }
-	
+.wf-widget-wrap{
+	color: #fff;
+}
 input[type="password"]{
 	height: 45px;
 	font-size: 150%;
