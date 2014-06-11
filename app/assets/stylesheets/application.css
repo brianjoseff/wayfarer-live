@@ -28,6 +28,13 @@ a.journal{
 	color: #c20002 !important;
 	bacground-color: #000 !important;
 }
+
+a.big-link{
+	text-decoration: none !important;
+	color: #c20002 !important;
+	font-size: 80%;
+}
+
 input[type="text"]{
    height: 45px;
    font-size: 150%;
