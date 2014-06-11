@@ -1,5 +1,5 @@
 .journal-entry
-  %h3 #{journal_entry.title}
+  %h3 #{link_to journal_entry.title , journal_entry_path(journal_entry), class: "journal"}
   %p.journal-date #{journal_entry.created_at.strftime("%B %d, %Y")}
   / %p #{ truncate_with_link(journal_entry.content, 40, journal_entry_path(journal_entry)) }
   %p #{ truncate(journal_entry.content, 40) } #{link_to "Read More", journal_entry_path(journal_entry)}

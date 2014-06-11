@@ -14,6 +14,8 @@
 
 body.normal { 
 	
+	
+	
 /*	background: url('wayfaring-background.jpg') no-repeat scroll 0 0 / 100% 100%;*/
   background: url('wayfaring-background.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -22,7 +24,10 @@ body.normal {
   background-size: cover;
 /*	background-attachment: fixed;*/
 }
-
+a.journal{
+	color: #c20002 !important;
+	bacground-color: #000 !important;
+}
 input[type="text"]{
    height: 45px;
    font-size: 150%;
