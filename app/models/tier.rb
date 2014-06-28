@@ -3,4 +3,9 @@ class Tier < ActiveRecord::Base
   # has_many :users, through: :memberships
   has_many :users
   
+  has_many :sales
+  validates_numericality_of :price,
+    greater_than: 49,
+    message: "must be at least 50 cents"
+
 end

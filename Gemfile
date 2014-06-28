@@ -8,6 +8,11 @@ group :development do
   gem 'sqlite3'
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+end
+gem 'capybara', '~> 2.2.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -36,6 +41,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'stripe'
+gem "figaro"
 
 gem 'devise'
 gem 'shareable'

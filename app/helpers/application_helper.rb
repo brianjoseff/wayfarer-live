@@ -15,4 +15,9 @@ module ApplicationHelper
     string_arr.count > limit ? "#{string_arr[0..(limit-1)].join(' ')}...""#{link_to 'Read More', path}" : words
   end
   
+  
+  def formatted_price(amount)
+    sprintf("$%0.0f", amount / 100.0)
+  end
+  
 end

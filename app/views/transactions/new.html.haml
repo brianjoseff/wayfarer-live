@@ -1,0 +1,70 @@
+.opaque-body
+  %h1= @tier.name
+  / = @tier.description.html_safe
+  - if @error
+    = @error
+  %p
+    Price: #{formatted_price(@tier.price)}
+  / = form_tag buy_path(permalink: @tier) do
+  /   %script.stripe-button{"data-amount" => @tier.price, "data-description" => @tier.name, "data-key" => STRIPE_PUBLIC_KEY, :src => "https://checkout.stripe.com/v2/checkout.js"}
+  :javascript
+    $(function(){
+      Stripe.setPublishableKey(' Rails.configuration.stripe[:publishable_key] ');
+    });
+  
+  = form_tag buy_path(permalink: @tier), :class => 'form', :id => 'payment-form' do
+    .form-group
+      %label.control-label{:for => "email"} Email
+      %input{ :placeholder => "pink@gorilla.com", :size => "20", :style => "width: 18em", :type => "email", class: "form-control"}
+    
+    .form-group
+      %label.control-label{:for => "password"} Password
+      %input{:placeholder => "password", :size => "20", :style => "width: 18em", :type => "password", class: "form-control"}
+    .form-group
+      / NUMBER
+      %label.control-label{for: "number"} Card Number
+      %input{"data-stripe" => "number", :pattern => "[\\d ]*", :placeholder => "4242424242424242", :size => "20", :style => "width: 18em", :type => "text", class: "form-control"}
+    .row
+      .form-group
+        .col-lg-2
+          / CVC
+          %label.control-label CVC
+          %div
+            %input{"data-stripe" => "cvc", :pattern => "\\d*", :placeholder => "***", :size => "3", :style => "width: 3em; display: inline-block;", :type => "text", class: "form-control"}
+            =image_tag "credit.png", id: "card-image", :style => "height: 30px; padding-left: 10px; margin-top:\n-10px"
+        .col-lg-2
+          %label.control-label Exp (MM/YYYY)
+          %div
+            %input{"data-stripe" => "exp-month", :pattern => "\\d*", :placeholder => "MM", :size => "3", :style => "width: 3em; display: inline-block;", :type => "text", class: "form-control"}
+            %input{"data-stripe" => "exp-year", :pattern => "\\d*", :placeholder => "YYYY", :size => "5", :style => "width: 4em; display: inline-block;", :type => "text", class: "form-control"}
+
+    
+      
+    .row
+      .col-lg-12
+        %button.btn.btn-primary.btn-large{:type => "submit", style: "margin-top: 10px;"} Buy Now | #{formatted_price(@tier.price)}
+
+  / .well{:style => "margin-left: 0px; position: relative; min-width: 650px; min-height: 180px;\nmax-height: 180px"}
+  /   = form_tag buy_path(permalink: @tier), :class => '', :id => 'payment-form' do
+  /     .row
+  /       %div{:style => "position: absolute; left: 20px"}
+  /         %label.control-label{:for => "email"} Email
+  /         %input#email{:name => "email", :placeholder => "you@example.com", :style => "width: 25em", :type => "email"}
+  /       %div{:style => "position: absolute; left: 400px"}
+  /         %label.control-label{:for => "number"} Card Number
+  /         %input#number{"data-stripe" => "number", :pattern => "[\\d ]*", :placeholder => "**** **** **** ****", :size => "20", :style => "width: 18em", :type => "text"}/
+  /     .row{:style => "margin-top: 65px"}
+  /       %div{:style => "position: absolute; left: 20px"}
+  /         %label.control-label{:for => "cvc"} CVC
+  /         %input#cvc{"data-stripe" => "cvc", :pattern => "\\d*", :placeholder => "***", :size => "3", :style => "width: 3em", :type => "text"}/
+  /         =image_tag "credit.png", id: "card-image", :style => "height: 30px; padding-left: 10px; margin-top:\n-10px"
+  /       %div{:style => "position: absolute; left: 150px"}
+  /         %label.control-label Exp (MM/YYYY)
+  /         %input#exp-month{"data-stripe" => "exp-month", :pattern => "\\d*", :placeholder => "MM", :size => "2", :style => "width: 2em", :type => "text"}/
+  /         %span /
+  /         %input#exp-year{"data-stripe" => "exp-year", :pattern => "\\d*", :placeholder => "YYYY", :size => "4", :style => "width: 3em", :type => "text"}/
+  /     .row{:style => "margin-top: 70px"}
+  /       .price{:style => "position: absolute; left: 20px;"}= formatted_price(@tier.price)
+  /       %div{:style => "position: absolute; left: 400px"}
+  /         %button.btn.btn-primary.btn-large{:type => "submit"} Buy Now
+  /         %img#spinner{:src => "/img/well_spinner.gif", :style => "display: none;"}

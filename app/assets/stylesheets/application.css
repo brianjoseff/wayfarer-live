@@ -24,6 +24,17 @@ body.normal {
   background-size: cover;
 /*	background-attachment: fixed;*/
 }
+.make-btn{
+	color: white !important;
+}
+.bold{
+	font-weight: bold;
+}
+
+.pop{
+	font-size: 125%;
+}
+
 a.journal{
 	color: #c20002 !important;
 	bacground-color: #000 !important;
@@ -36,6 +47,11 @@ a.big-link{
 }
 
 input[type="text"]{
+   height: 45px;
+   font-size: 150%;
+   line-height: 45px;
+}
+input[type="email"]{
    height: 45px;
    font-size: 150%;
    line-height: 45px;

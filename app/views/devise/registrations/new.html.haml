@@ -1,12 +1,33 @@
 .row
   .col-lg-4
+  .col-lg-4.opaque-body
     / - flash.each do |key, value|
     /   = content_tag :div, value, class: "flash #{key}"
+
+    %h1 Sign up
+    %h3 Non-kickstarter people: #{link_to "GET ACCESS!", access_levels_path, class: "btn btn-primary make-btn"}
+    %h3 Kickstarter backers:
+    =@message
+    -if @tier
+      %h1 #{@tier.name}
+      / List what you get?
+      =link_to "Get more!", access_levels_path, class: "btn btn-primary make-btn"
+      
     -if flash[:wrong_code]
-      %h1.error Wrong Code!
-    %h2 Sign up
+      %h1.error=flash[:wrong_code]
     = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form"}) do |f|
       = devise_error_messages!
+      / = f.hidden_field :stripe_card_token  
+      /       .form-group
+      /         = label_tag :card_number, "Credit Card Number"
+      /         = text_field_tag :card_number, nil, name: nil, id: "card_number",class: 'form-control'
+      /       
+      /       .form-group
+      /         = label_tag :card_code, "Security Code on Card (CVV)"
+      /         = text_field_tag :card_code, nil, name: nil, id: "card_code"
+      /         = label_tag :card_month, "Card Expiration"
+      /         = select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"}
+      /         = select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"}
       .form-group
         = f.label :email, class: "control-label"
         %br/
@@ -20,17 +41,18 @@
       / .form-group
       /   = f.label :password, class: "control-label"
       /   = f.password_field :password, autocomplete: "off", type: "password", class: "form-control", placeholder: "password"
-      .form-group
-        =label_tag "Access Level", nil, class: "control-label"
-        = f.collection_select(:tier_id, Tier.all, :id, :name, {:prompt => 'Choose an Access Level'},:class => "form-control")
-        =hidden_field_tag('tier[user_ids][]', resource.id)
-        
-          
-         
-      .form-group
-        =label_tag "Entry Code", nil, class: "control-label"
-        =text_field_tag :code, nil, :class => "form-control", :placeholder => "Entry Code" 
+      
+      / .form-group
+      /   =label_tag "Access Level", nil, class: "control-label"
+      /   = f.collection_select(:tier_id, Tier.all, :id, :name, {:prompt => 'Choose an Access Level'},:class => "form-control")
+      /   =hidden_field_tag('tier[user_ids][]', resource.id)
+      /   
+      /     
+      /    
+      / .form-group
+      /   =label_tag "Entry Code", nil, class: "control-label"
+      /   =text_field_tag :code, nil, :class => "form-control", :placeholder => "Entry Code" 
         
       
-      = f.submit "Sign up", class: "btn btn-primary"
+      = f.submit "Sign up #{@tier ? "| " + formatted_price(@tier.price) : ""}", class: "btn btn-primary"
     = render "devise/shared/links"

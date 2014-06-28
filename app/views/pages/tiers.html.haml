@@ -1,0 +1,23 @@
+.opaque-body
+  .row
+    -if flash[:wrong_code]
+      %h1.error=flash[:wrong_code]
+    .col-lg-4.text-center
+      %h2 Clown - #{formatted_price(@clown.price)}
+      / =link_to "Get This!", new_user_registration_path(:tier_id => @clown.id)
+      =link_to "Get This!", new_nonks_path(:tier_id => @clown.id), class: "btn btn-primary make-btn"
+      %p exclusive content
+    .col-lg-4.text-center
+      %h2 Acrobat - #{formatted_price(@acrobat.price)}
+      =link_to "Get This!", new_nonks_path(:tier_id => @acrobat.id), class: "btn btn-primary make-btn"
+      %p exclusive content
+      %p.bold.pop private polls
+      
+    .col-lg-4.text-center
+      %h2 Fire Dancer - #{formatted_price(@fire_dancer.price)}
+      =link_to "Get This!", new_nonks_path(:tier_id => @fire_dancer.id), class: "btn btn-primary make-btn"
+      %p exclusive content
+      %p private polls
+      %p.bold.pop live Q&A
+  .row
+    %h3 Kickstarter backers: #{link_to "Sign up here", new_user_registration_path}

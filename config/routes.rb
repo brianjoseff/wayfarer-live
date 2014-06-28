@@ -1,9 +1,24 @@
 WayfarerLive::Application.routes.draw do
+  resources :sales
+
   resources :memberships
 
   resources :journal_entries
+  
+  get '/buy', to: 'transactions#new', as: :show_buy
+  # get '/buy/:permalink', to: 'transactions#new', as: :show_buy
+  post'/buy/:permalink', to:'transactions#create', as: :buy
+  get'/pickup/:guid', to:'transactions#pickup', as: :pickup
+  get '/download/:guid', to: 'transactions#download', as: :download
 
   devise_for :users, :controllers => { registrations: 'users/registrations' }
+  
+  devise_scope :user do
+    get 'users/new_nonks', to: "users/registrations#new_nonks", as: 'new_nonks'
+    post 'create_nonks', to: "users/registrations#create_nonks"
+  end
+  
+  
   get "pages/index"
   
   get '/users/:id', :to => 'users#show', :as => :user
@@ -20,6 +35,7 @@ WayfarerLive::Application.routes.draw do
   match '/exclusive_content', to: "pages#exclusive_content", via: :get
   match '/event', to: "pages#event", via: :get
   match '/polls', to: "pages#polls", via: :get
+  match '/access_levels', to: "pages#tiers", via: :get
   root to: "pages#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

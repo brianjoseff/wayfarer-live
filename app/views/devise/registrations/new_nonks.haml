@@ -1,0 +1,80 @@
+.row
+  .col-lg-4
+  .col-lg-4.opaque-body
+    / - flash.each do |key, value|
+    /   = content_tag :div, value, class: "flash #{key}"
+    
+    %h2 Sign up for:
+    =@message
+    
+    / %p E: #{@error}
+    / %p #{}
+    -if @error2
+      %p error
+    -if @tier
+      %h1 #{@tier.name}
+      / List what you get?
+      =link_to "Get more!", access_levels_path, class: "btn btn-primary make-btn"
+      
+    -if flash[:wrong_code]
+      %h1.error=flash[:wrong_code]
+    /controller: "users/registration", action: "create_nonks"
+    =form_for(resource, as: resource_name, url:  create_nonks_path, :html => { :class => "form", id: "payment_form" }, method: "post") do |f| 
+      / = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form", id: "payment_form"}) do |f|
+      = devise_error_messages!
+      /= f.hidden_field :stripe_card_token  
+      
+      
+
+      .form-group
+        = f.label :email, class: "control-label"
+        %br/
+        = f.email_field :email, autofocus: true, type: "text", class: "form-control", placeholder: "jake@doogie.com"
+      .form-group
+        = f.label :password, class: "control-label"
+        = f.password_field :password, autocomplete: "off", type: "password", class: "form-control", placeholder: "password"
+        
+      -if @error
+        %h4.error.stripe-error= @error
+      .form-group
+        / NUMBER
+        %label.control-label{for: "number"} Card Number
+        %input{"data-stripe" => "number", :pattern => "[\\d ]*", :placeholder => "4242424242424242", :type => "text", class: "form-control"}
+      .row
+        .form-group
+          .col-lg-6
+            / CVC
+            %label.control-label CVC
+            %div
+              %input{"data-stripe" => "cvc", :pattern => "\\d*", :placeholder => "***", :size => "3", :style => "width: 3em; display: inline-block;", :type => "text", class: "form-control"}
+              =image_tag "credit.png", id: "card-image", :style => "height: 30px; padding-left: 10px; margin-top:\n-10px"
+          .col-lg-6
+            .pull-right
+              %label.control-label Exp (MM/YYYY)
+              %div
+                %input{"data-stripe" => "exp-month", :pattern => "\\d*", :placeholder => "MM", :size => "3", :style => "width: 3em; display: inline-block;", :type => "text", class: "form-control"}
+                %input{"data-stripe" => "exp-year", :pattern => "\\d*", :placeholder => "YYYY", :size => "5", :style => "width: 4em; display: inline-block;", :type => "text", class: "form-control"}
+      
+      
+      / OLD WAY TO GET CC INFO
+      / .form-group
+      /   = label_tag :card_number, "Credit Card Number"
+      /   = text_field_tag :card_number, nil, name: nil, id: "card_number",class: 'form-control'
+      / .form-group
+      /   = label_tag :card_code, "Security Code on Card (CVV)"
+      /   = text_field_tag :card_code, nil, name: nil, id: "card_code"
+      /   = label_tag :card_month, "Card Expiration"
+      /   = select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"}
+      /   = select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"}
+      / .form-group
+      /   = f.label :email, class: "control-label"
+      /   %br/
+      /   = f.email_field :email, autofocus: true, type: "text", class: "form-control", placeholder: "gorilla@wayfaringlive.com"
+      / .form-group
+      /   = f.label :password, class: "control-label"
+      /   = f.password_field :password, autocomplete: "off", type: "password", class: "form-control", placeholder: "password"
+        
+      
+      .payment-errors.error
+      = f.submit "Sign up #{@tier ? "| " + formatted_price(@tier.price) : ""}", class: "btn btn-primary", style: "margin-top: 10px;"
+    = render "devise/shared/links"

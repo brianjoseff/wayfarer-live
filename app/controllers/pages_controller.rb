@@ -1,8 +1,15 @@
 class PagesController < ApplicationController
   before_filter :allow_iframe_requests, only: [:header_iframe]
-  # before_filter :redirect_to_signup, :only => [:exclusive_content]
+  before_filter :redirect_to_signup, :only => [:exclusive_content]
   
   def index
+  end
+  
+  def tiers
+    @clown = Tier.first
+    @acrobat = Tier.find(2)
+    @fire_dancer = Tier.find(3)
+ 
   end
   
   def episodes

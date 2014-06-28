@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140527185021) do
+ActiveRecord::Schema.define(version: 20140625220038) do
 
   create_table "journal_entries", force: true do |t|
     t.text     "content"
@@ -27,6 +27,18 @@ ActiveRecord::Schema.define(version: 20140527185021) do
     t.datetime "updated_at"
   end
 
+  create_table "sales", force: true do |t|
+    t.string   "email"
+    t.string   "guid"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "tier_id"
+  end
+
+  add_index "sales", ["product_id"], name: "index_sales_on_product_id"
+  add_index "sales", ["tier_id"], name: "index_sales_on_tier_id"
+
   create_table "tiers", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -34,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140527185021) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "code"
+    t.text     "emails"
   end
 
   create_table "users", force: true do |t|
@@ -51,6 +64,7 @@ ActiveRecord::Schema.define(version: 20140527185021) do
     t.datetime "updated_at"
     t.boolean  "admin"
     t.integer  "tier_id"
+    t.string   "stripe_card_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
