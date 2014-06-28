@@ -32,7 +32,8 @@
           %li{:class => "#{'active' if current_page?(journals_path)}"}=link_to "Journals", journals_path
           %li{:class => "#{'active' if current_page?(social_hub_path)}"}=link_to "Social Hub", social_hub_path
           %li{:class => "#{'active' if current_page?(exclusive_content_path)}"}=link_to "Exclusive Content", current_user ? exclusive_content_path : access_levels_path
-          %li#nav-pill-pink{:class => "#{'active' if current_page?(get_access_path)}"}=link_to "Get Access", access_levels_path
+          -unless user_signed_in?
+            %li#nav-pill-pink{:class => "#{'active' if current_page?(get_access_path)}"}=link_to "Get Access", access_levels_path
           
           / %li{:class => "#{'active' if current_page?(exclusive_content_path)}"}=link_to "Join the Rumpus", exclusive_content_path
           / 

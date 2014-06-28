@@ -152,8 +152,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if tier3.emails
       scan3 = tier3.emails.scan(resource.email)
     end
-    # tier4 = Tier.find(4)
-    # scan4 = tier4.emails.scan(resource.email)
+    tier4 = Tier.find(4)
+    if tier4.emails
+      scan4 = tier4.emails.scan(resource.email)
+    end
+    tier5 = Tier.find(5)
+    if tier5.emails
+      scan4 = tier5.emails.scan(resource.email)
+    end
+    tier6 = Tier.find(6)
+    if tier6.emails
+      scan6 = tier6.emails.scan(resource.email)
+    end
+
     
     if scan1 && scan1.first == resource.email
       return tier1
@@ -161,7 +172,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
       return tier2
     elsif scan3 && scan3.first == resource.email
       return tier3
-    # elsif scan4 == resource.email? return tier4
+    elsif scan4 == resource.email?
+      return tier4
+    elsif scan5 == resource.email?
+      return tier5
+    elsif scan6 == resource.email?
+      return tier6
     else
       return false
     end
