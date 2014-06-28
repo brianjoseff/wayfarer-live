@@ -172,11 +172,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
       return tier2
     elsif scan3 && scan3.first == resource.email
       return tier3
-    elsif scan4 == resource.email?
+    elsif scan4 && scan4.first == resource.email?
       return tier4
-    elsif scan5 == resource.email?
+    elsif scan5 && scan5.first == resource.email?
       return tier5
-    elsif scan6 == resource.email?
+    elsif scan6 && scan6.first == resource.email?
       return tier6
     else
       return false
