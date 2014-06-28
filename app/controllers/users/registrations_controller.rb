@@ -158,7 +158,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     tier5 = Tier.find(5)
     if tier5.emails
-      scan4 = tier5.emails.scan(resource.email)
+      scan5 = tier5.emails.scan(resource.email)
     end
     tier6 = Tier.find(6)
     if tier6.emails
