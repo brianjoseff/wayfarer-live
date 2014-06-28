@@ -17,3 +17,6 @@
 
 # Ignore application configuration
 /config/application.yml
+
+#ignore rake task with users emails in it
+/lib/tasks/create_tiers.rake
