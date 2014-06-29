@@ -84,7 +84,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       
       if sorting_hat == false
         # change this to prompting them to buy from our pricing page for exclusive access!!!!!!!!!
-        flash[:wrong_code] = "You didn't contribute with Kickstarter please choose a level to get access"
+        flash[:wrong_code] = "Either you didn't sign up with KS or you didn't contribute enough to qualify for one of the levels ($15 is the base level)"
         clean_up_passwords resource
         redirect_to access_levels_path
         return

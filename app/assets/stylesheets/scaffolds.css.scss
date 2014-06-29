@@ -47,6 +47,17 @@ a {
   }
 }
 
+a.bright {
+  color: #c20002;
+  &:visited {
+    color: #c20002;
+  }
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
 div {
   &.field, &.actions {
     margin-bottom: 10px;

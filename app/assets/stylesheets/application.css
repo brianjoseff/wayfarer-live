@@ -24,6 +24,8 @@ body.normal {
   background-size: cover;
 /*	background-attachment: fixed;*/
 }
+
+
 .make-btn{
 	color: white !important;
 }
@@ -102,10 +104,13 @@ input[type="password"]{
 	color: #c20002;
 	text-decoration: underline;
 }
+
 .opaque-body a:hover{
 	color: #fff18b;
 	text-decoration: underline;
 }
+
+
 
 
 .twitter{
