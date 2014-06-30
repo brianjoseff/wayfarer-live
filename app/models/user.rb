@@ -36,4 +36,12 @@ class User < ActiveRecord::Base
     errors.add :base, "There was a problem with your credit card."
     false   
   end
+  
+  
+  def self.sign_team_up(email)
+    User.create!(email: email, password: "wayfaring", tier_id: 1)
+  end
+  
+  
+  
 end

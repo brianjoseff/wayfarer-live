@@ -39,7 +39,7 @@ class PagesController < ApplicationController
   def header_iframe
   end
   
-  def sponsors
+  def partners
   end
   
   def contact_us
