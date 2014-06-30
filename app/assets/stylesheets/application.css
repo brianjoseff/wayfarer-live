@@ -110,6 +110,9 @@ input[type="password"]{
 	text-decoration: underline;
 }
 
+p.error{
+	color: red !important;
+}
 
 
 

@@ -22,6 +22,12 @@
     =form_for(resource, as: resource_name, url:  create_nonks_path, :html => { :class => "form", id: "payment_form" }, method: "post") do |f| 
       / = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form", id: "payment_form"}) do |f|
       = devise_error_messages!
+      -if flash[:devise_errors]
+        - flash.each do |name, msg|
+          - if msg.class == Array
+            - msg.each do |message|
+              %p{class: "error", id: "flash_#{name}"} #{message}
+        %p sorry your CC details reset, working on it
       /= f.hidden_field :stripe_card_token  
       
       

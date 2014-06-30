@@ -64,8 +64,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
         #   flash.now[:wrong_code] = "Wrong code"
         # end
         @error2 = resource.email + "fuck"
+        flash[:devise_errors] = flash[:devise_errors].to_a.concat resource.errors.full_messages
         clean_up_passwords resource
-        respond_with resource
+        redirect_to new_nonks_path(:tier_id => @tier.id, :error => @error)
       end
     end
   end
